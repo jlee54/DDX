@@ -2,4 +2,4 @@ To run:
 php/php.exe -S localhost:8000 index.php
 
 Test:
-Go to: http://localhost:8000/winningCandidateByCounty
+http://localhost:8000/winningPrimaryCandidatesByCounty

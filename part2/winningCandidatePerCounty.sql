@@ -6,5 +6,4 @@ SELECT r1.state, r1.county, r1.party, r1.candidate
             AND r2.party = r1.party
             AND r2.candidate <> r1.candidate
         	AND r2.votes > r1.votes
-            
     WHERE r2.votes IS NULL
