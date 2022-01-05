@@ -1,0 +1,8 @@
+1. SFTP is usually simpler to setup, but API is more robust to have long-term. Let's setup a REST API with JWT authentication. JWT authentication will require a "username/password" from the data provider, and return a bearer token for following requests. We can use something like Flask within Python to easily setup routes to hit. We will setup a route to hit (i.e. (POST) /election/:id/incrementVotes) which will receive the files as a parameter.
+
+We will check the date provider that they have permission to hit the endpoint, and to alter the election results. Should have a storage layer (i.e. SQL) for the permissions, containing a mapping between clients and elections they can alter. Within the endpoint it should call upon a class (based on an DB mapping table that maps candidates to elections) method, to update the vote counter. The API should return success upon a successful update; otherwise return an error (with correct HTTP code) with details on the causing error (i.e. invalid file format). Successes and errors should be logged within the system.
+
+2.
+a) Do we trust that we have all the candidates, parties, counties in our system beforehand? Or do we need to add those to our storage layer as they come in?
+b) What is the actual file structure? Can a file contain multiple elections?
+c) Does the data provider have API integration capability?
